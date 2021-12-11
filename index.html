@@ -13,7 +13,7 @@
 
 <body>
 
-    <div class="container">
+    <div class="container" id="cv-form">
         <h1 class="text-center my-2">Resume Generator</h1>
         <p class="text-center">By Shivam Vora</p>
 
@@ -56,13 +56,13 @@
             <div class="col-md-6">
                 <h3>Professional Information</h3>
                 <div class="form-group mt-2">
-                    <label for="">Objective</label>
-                    <textarea rows="5" class="form-control" placeholder="Enter here"></textarea>
+                    <label for="objectiveField">Objective</label>
+                    <textarea rows="5" class="form-control" id="objectiveField" placeholder="Enter here"></textarea>
                     </textarea>
                 </div>
 
                 <div class="form-group mt-2" id="we">
-                    <label for="">Work Experience</label>
+                    <label for="weField">Work Experience</label>
                     <textarea rows="3" class="form-control weField" placeholder="Enter here"></textarea>
                     </textarea>
                     <!-- new textarea will come here dynamically -->
@@ -72,7 +72,7 @@
                 </div>
 
                 <div class="form-group mt-2" id="aq">
-                    <label for="">Academic Qualification</label>
+                    <label for="eqField">Academic Qualification</label>
                     <textarea rows="3" class="form-control eqField" placeholder="Enter here"></textarea>
                     </textarea>
                     <div class="container text-center mt-2" id="aqAddButton">
@@ -84,11 +84,75 @@
 
         </div>
         <div class="container text-center mt-2">
-            <button class="btn btn-outline-secondary btn-lg">Generate CV</button>
+            <button class="btn btn-outline-secondary btn-lg" onclick="generateCV()">Generate CV</button>
         </div>
     </div>
 
+    <!-- cv template -->
+    <div class="container" id="cv-template">
+        <div class="row">
+            <!-- this is first column -->
+            <div class="col-md-4 text-center py-5 background">
+                <img src="https://180dc.org/wp-content/uploads/2016/08/default-profile.png" alt="User Image"
+                    class="img-fluid myimg" />
 
+                <div class="container">
+                    <p id="nameT1">Shivam Vora</p>
+                    <p id="contactT">+919638334295,+919638334295</p>
+                    <p id="addressT">42456/545554/5455455 noida, india</p>
+                    <hr>
+                    <p class="btn btn-primary"><a id="fbT" href="#1">facebook</a></p>
+                    <p class="btn btn-primary"><a id="instaT" href="#1">insgagram</a></p>
+                    <p class="btn btn-primary"><a id="LinkedT" href="#1">linkedin</a></p>
+                </div>
+            </div>
+            <!-- this is second column -->
+            <div class="col-md-8 py-5">
+                <h1 id="nameT2" class="text-center" style="font-weight: 700">Shivam vora</h1>
+                <!-- Objective Card -->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objectieT">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae maxime
+                            delectus
+                            perferendis vel quo voluptatibus aspernatur voluptates porro eius? Voluptatibus iste cum
+                            amet deserunt ipsam velit debitis, adipisci dolor accusantium?</p>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="weT">
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, accusamus.</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, accusamus.</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, accusamus.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Academic Qualification</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="aqT">
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, accusamus.</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, accusamus.</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, accusamus.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container mt-3 text-center">
+                    <button class="btn btn-success" id="print_btn" onclick="printCV()">Print CV</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
